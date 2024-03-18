@@ -1,0 +1,154 @@
+1. List Docker Images:
+   docker images
+
+2. Pull Docker Image:
+   docker pull hello-world
+
+3. Check Docker Version:
+   docker -v
+
+4. Search for Docker Image:
+   docker search mysql
+
+5. Run Docker Container:
+   docker run python
+
+6. List Running Containers:
+   docker ps
+
+7. List All Containers:
+   docker ps --a
+
+8. Run Docker Container with Name:
+   docker run --name pythonContainer -d python
+
+9. Run Docker Container Interactively:
+   docker run --name pythonContainer1 -it -d python
+
+10. Remove Docker Container:
+    docker rm <container_id>
+
+11. Execute Command in Running Container:
+    docker exec -it <container_id> python3
+    docker exec -it mysql-container bash
+
+12. Inspect Docker Object:
+    docker inspect <container_id>
+
+13. Stop Docker Container:
+    docker stop <container_id>
+
+14. Remove Docker Image:
+    docker rmi python3
+
+15. Restart Docker Container:
+    docker restart python3
+
+16. Docker Login and Logout:
+    docker login
+    docker logout
+
+17. Build Custom Docker Image:
+    docker build -t myubuantuimage:tag \Users\abhis\OneDrive\Documents\code\docker\ubuntu_image
+
+18. Commit and Push Docker Image:
+    docker commit <container_id> mycustomimage:tag
+    docker push mycustomimage:tag
+
+
+19. Show Container Logs:
+    docker logs <container_name_or_id>
+
+20. Manage Docker Volumes:
+    docker volume ls
+    docker volume create <volume_name>
+    docker volume inspect <volume_name>
+
+21. Docker Filesystem Copy:
+    docker cp <local_path> <container_name_or_id>:<container_path>
+    docker cp <container_name_or_id>:<container_path> <local_path>
+
+22. Docker Network Commands:
+    docker network ls
+    docker network inspect <network_name>
+
+23. Pause and Unpause Docker Container:
+    docker pause <container_name_or_id>
+    docker unpause <container_name_or_id>
+
+24. Port Mapping:
+    docker run -p <host_port>:<container_port> <image_name>
+
+25. Environment Variables:
+    docker run -e KEY=VALUE <image_name>
+
+26. Interactive Shell in Container:
+    docker exec -it <container_name_or_id> /bin/sh
+
+27. Remove All Stopped Containers:
+    docker container prune
+
+28. Remove Unused Images:
+    docker image prune
+
+29. Display Docker System Information:
+    docker info
+
+30. Create a Docker Network:
+    docker network create <network_name>
+
+31. Run Docker Container with Environment Variables:
+    docker run --env VAR_NAME=VAR_VALUE <image_name>
+
+32. Docker Stats for Container:
+    docker stats <container_name_or_id>
+
+33. Docker Compose Up:
+    docker-compose up
+
+34. Docker Compose Down:
+    docker-compose down
+
+35. Container Resource Limits:
+    docker run --memory <limit> --cpus <limit> <image_name>
+
+36. Docker Build with Dockerfile in a Different Location:
+    docker build -t <image_name> -f /path/to/Dockerfile .
+
+37. Set Container Name while Running:
+    docker run --name <container_name> <image_name>
+
+38. Create a Docker Image from a Container:
+    docker commit <container_name_or_id> <new_image_name>
+
+39. Docker Push Image to Specific Registry:
+    docker push <registry_name>/<image_name>:<tag>
+
+40. Docker Save and Load Images:
+    docker save -o <output_tar_file> <image_name>
+    docker load -i <input_tar_file>
+
+41. Docker Swarm Commands (for orchestration):
+    docker swarm init
+    docker service ls
+    docker stack deploy -c <compose_file> <stack_name>
+
+42.Run Mysql 
+   docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw -d                                             mysql:latest
+
+
+my-secret-pw          password
+C:\Users\abhis>docker exec -it mysql-container bash
+bash-4.4# mysql -p
+Enter password:
+
+
+docker exec -it mycontainer python
+docker run -it ubuntu:latest
+docker exec -it c6be79c21d13 bash
+
+> docker run -it nodejs-server
+
+ docker run -it -e PORT=4000 -p 4000:400 nodejs-server 
+docker compose down
+docker compose up
