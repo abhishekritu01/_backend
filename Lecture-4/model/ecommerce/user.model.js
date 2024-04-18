@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
@@ -6,20 +5,21 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-
-        lowercase: true
     },
-    email:{
+    email: {
         type: String,
         required: true,
         unique: true,
         lowercase: true,
     },
-    password:{
+    password: {
         type: String,
         required: true,
-    },
+        // required: [true, "Password is required"],
+        minlength: 6,
+    }
 
-},{timestamps: true});
+
+}, { timespam: true });
 
 export const User = mongoose.model("User", userSchema);

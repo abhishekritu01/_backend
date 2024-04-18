@@ -1,14 +1,12 @@
 import mongoose from "mongoose";
-
 // mini model for order
-
 const orderItemsSchema = new mongoose.Schema({
-    productId:{
+    productId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product",
         required: true
     },
-    quantity:{
+    quantity: {
         type: Number,
         required: true,
         default: 0
@@ -33,7 +31,7 @@ const orderSchema = new mongoose({
         required: true
     },
 
-    orderItems:{
+    orderItems: {
         type: [orderItemsSchema],
         required: true
     },
@@ -45,10 +43,10 @@ const orderSchema = new mongoose({
 
     status: {
         type: String,
-        enum : ["pending", "completed", "cancelled","delivered"],
+        enum: ["pending", "completed", "cancelled", "delivered"],
         default: "pending"
     }
 
-    
+
 }, { timestamps: true });
 export const Order = mongoose.model("Order", orderSchema);

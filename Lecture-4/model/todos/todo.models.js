@@ -9,6 +9,7 @@ const todoSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    // referance the user who created the todo
     createdBy:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
